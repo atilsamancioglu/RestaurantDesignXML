@@ -5,7 +5,10 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp"
+    android:paddingTop="24dp"
+    android:paddingBottom="24dp"
+    android:paddingStart="32dp"
+    android:paddingEnd="32dp"
     tools:context=".MainActivity">
 
     <ImageView
@@ -23,21 +26,23 @@
         android:id="@+id/signupTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
         android:text="Sign up"
         android:textSize="32sp"
         android:textStyle="bold"
-        android:layout_marginTop="24dp"
-        app:layout_constraintTop_toBottomOf="@id/illustrationImage"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/illustrationImage" />
 
     <ImageView
         android:id="@+id/emailIcon"
         android:layout_width="24dp"
         android:layout_height="24dp"
+        android:layout_marginStart="8dp"
         android:src="@drawable/work"
-        app:layout_constraintTop_toTopOf="@id/emailInput"
         app:layout_constraintBottom_toBottomOf="@id/emailInput"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/emailInput" />
 
     <EditText
         android:id="@+id/emailInput"
@@ -66,10 +71,11 @@
         android:id="@+id/profileIcon"
         android:layout_width="24dp"
         android:layout_height="24dp"
+        android:layout_marginStart="8dp"
         android:src="@drawable/profile"
-        app:layout_constraintTop_toTopOf="@id/fullNameInput"
         app:layout_constraintBottom_toBottomOf="@id/fullNameInput"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/fullNameInput" />
 
     <EditText
         android:id="@+id/fullNameInput"
@@ -97,10 +103,11 @@
         android:id="@+id/mobileIcon"
         android:layout_width="24dp"
         android:layout_height="24dp"
+        android:layout_marginStart="8dp"
         android:src="@drawable/calling"
-        app:layout_constraintTop_toTopOf="@id/mobileInput"
         app:layout_constraintBottom_toBottomOf="@id/mobileInput"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/mobileInput" />
 
     <EditText
         android:id="@+id/mobileInput"
@@ -128,10 +135,11 @@
         android:id="@+id/passwordIcon"
         android:layout_width="24dp"
         android:layout_height="24dp"
+        android:layout_marginStart="8dp"
         android:src="@drawable/password"
-        app:layout_constraintTop_toTopOf="@id/passwordInput"
         app:layout_constraintBottom_toBottomOf="@id/passwordInput"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/passwordInput" />
 
     <EditText
         android:id="@+id/passwordInput"
@@ -159,11 +167,12 @@
         android:id="@+id/termsText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:text="By Signing up, you're agree to our "
         android:textSize="12sp"
-        app:layout_constraintTop_toBottomOf="@id/passwordDivider"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/passwordDivider" />
 
     <TextView
         android:id="@+id/termsLink"
@@ -194,28 +203,46 @@
         app:layout_constraintTop_toTopOf="@id/termsText"
         app:layout_constraintStart_toEndOf="@id/andText" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/continueButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:padding="16dp"
         android:text="Continue"
         android:textAllCaps="false"
-        android:padding="16dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/rounded_button"
-        android:backgroundTint="#80FFE4"
-        app:layout_constraintTop_toBottomOf="@id/termsText"
+        android:textColor="@color/black"
+        app:backgroundTint="#64FCD9"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
+        app:layout_constraintTop_toBottomOf="@id/termsText" />
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@id/continueButton"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    >
     <TextView
         android:id="@+id/loginText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Joined before? Login"
+        android:text="Joined before? "
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/continueButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        />
+
+    <TextView
+        android:id="@+id/loginTextGreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textColor="#000000"
+        android:layout_marginTop="16dp"
+        />
+</LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
